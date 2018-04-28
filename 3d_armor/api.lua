@@ -390,6 +390,8 @@ armor.get_player_skin = function(self, name)
 		return u_skins.u_skins[name]..".png"
 	elseif self.skin_mod == "wardrobe" and wardrobe.playerSkins and wardrobe.playerSkins[name] then
 		return wardrobe.playerSkins[name]
+	elseif self.skin_mod == "skin_db" and skin_db.skin[name] then
+		return skin_db.skin[name].filename
 	end
 	return armor.default_skin..".png"
 end
